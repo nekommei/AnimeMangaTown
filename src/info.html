@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Manga Town</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/bc032f014a.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <!-- navigation & header -->
+    <nav>
+        <!-- website name -->
+        <div class="nav-header">
+            <span class="nav-icon" onclick="openNav()">&#9776;</span>
+            <a href="index.html" style="text-decoration: none; color:#ffffff;">
+                <div class="web-name-container">
+                    <h1 class="web-name" id="web-name-left">Anime<br>Manga</h1>
+                    <span class="web-name" id="web-name-right">Town</span>
+                </div>
+            </a>
+
+
+            <!-- search bar -->
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Anime / Manga">
+                <select id="searchType">
+                    <option value="anime">Anime</option>
+                    <option value="manga">Manga</option>
+                </select>
+                <button id="search-btn" type="submit" onclick="buttonClicked1()">Search</button>
+            </div>
+
+        </div>
+
+        <!-- Add the navigation bar -->
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="index.html">Home</a>
+            <a href="myList.html">My List</a>
+        </div>
+    </nav>
+
+    <!-- content -->
+    <div class="details-container">
+        <h1 id="title">Title</h1>
+        <hr>
+
+        <!-- left box -->
+        <div id="left-box">
+            <table valign="middle" border="4" width="100%"
+                style="border:solid rgb(120, 116, 116);border-collapse: collapse;text-align: center;">
+                <tr style="font-size: large;">
+                    <td>Score</td>
+                    <td>Ranked</td>
+                    <td>Popularity</td>
+                </tr>
+                <tr>
+                    <td><span id="score">null</span></td>
+                    <td># <span id="rank">null</span></td>
+                    <td># <span id="popularity">null</span></td>
+                </tr>
+            </table>
+            <br>
+            <img id="image" width="100%" height="auto" ><br><br>
+            <a id="sitelink" target="_blank">Learn More</a><br><br>
+            <a id="addtolist" href="#listForm"><i class="fa-solid fa-plus"></i> Add to My List </a>
+        </div>
+
+        <!-- right box  -->
+        <div id="right-box">
+            <div id="textInfo"></div>
+            <table>
+                <tr>
+                    <td width="10%" valign="top">
+                        <p style="margin-top: 0%;">Synopsis : </p>
+                    </td>
+                    <td valign="top" width="80%">
+                        <p id="synopsis" style="color: white; font-weight:normal; margin-top: 0%;">null</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Releases -->
+        
+
+    </div>
+
+    <div style="padding-top:50px ; padding-left:3%;">
+        <center>
+            <table width="100%">
+                <td style="text-align: center; background-color:#E882B2;">
+                    <h2 style="color: white; margin-top: 0.5%;margin-bottom: 0.5%;">Similar Releases</h2>
+                </td>
+            </table>
+            <div id="releases" class="flex-container"></div><br>
+        </center>
+    </div>
+
+    <!-- list form -->
+    <div id="listForm">
+
+        <h1 style="color: #E882B2;">Add to My List</h1>
+        <input type="hidden" id="typeList" required>
+        <input type="hidden" id="imageList">
+        <table>
+          <tr>
+            <td style="width: 20%; "><label for="titleInput">Title:</label></td>
+            <td><input class="listInput"  type="text" id="titleInput" disabled></td>
+          </tr>
+          <tr>
+            <td><label for="chapInput">Chapter/Episode:</label></td>
+            <td><input class="listInput"  type="number" id="chapInput"  min="1" required></td>
+          </tr>
+          <tr>
+            <td><label for="readStat">Read/Watched:</label></td>
+            <td><select  class="listInput"  id="readStat" style="height: max-content;" required>
+              <option value="yes">YES</option>
+              <option value="no">NO</option>
+            </select></td>
+          </tr>
+          <tr>
+            <td><label for="myRate">My Rating:</label></td>
+            <td style="font-size: large;"><input required class="listInput"  type="number" id="myRate" max="10" min="0" style="width: max-content;"> / 10</td>
+          </tr>
+          <tr>
+            <td><label for="comment">Comment:</label></td>
+            <td><input type="text" class="listInput"  id="comment" required></td>
+          </tr>
+        </table>
+        <center>
+            <button id="addMyList" style="margin-top: 20px;" onclick="addtoListBtn()">Add to My List</button>
+        </center>
+        
+    </div>
+
+
+    <script src="main.js"></script>
+    <script>
+        document.getElementById('myRate').addEventListener('input', function() {
+            if (this.value > 10 || this.value < 0) {
+              alert("Rating must be between 0 and 10");
+              this.value = ""; // clear the input field
+            }
+          });
+    </script>
+
+</body>
+
+</html>

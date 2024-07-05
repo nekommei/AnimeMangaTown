@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Manga Town</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/bc032f014a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- navigation & header -->
+    <nav>
+        <!-- website name -->
+        <div class="nav-header">
+            <span class="nav-icon" onclick="openNav()">&#9776;</span>
+            <a href="index.html" style="text-decoration: none; color:#ffffff;">
+                <div class="web-name-container">
+                    <h1 class="web-name" id="web-name-left">Anime<br>Manga</h1>
+                    <span class="web-name" id="web-name-right">Town</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- Add the navigation bar -->
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="index.html">Home</a>
+            <a href="myList.html">My List</a>
+        </div>
+    </nav>
+
+    <!-- content -->
+    <div>
+        <center>
+            <h1 id="listH1">My List</h1>
+            <table class="listTable">
+                <thead>
+                    <tr id="mylist-row1">
+                        <th width="15%">Image</th>
+                        <th width="65%">Details</th>
+                        <th width="20%" colspan="2">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="listBody"></tbody>
+            </table>
+        </center>
+    </div>
+
+    <!-- Add a hidden input field to store the listID value -->
+    <input type="hidden" id="listID" value="">
+
+    <!-- Update form -->
+    <br><br>
+    <div id="listForm" style="display: none;">
+        <h1 style="color: #E882B2;">Update My List</h1>
+        <table id="updateTable">
+            <tr>
+                <td style="width: 20%; "><label for="titleInput">Title:</label></td>
+                <td><input class="listInput"  type="text" id="titleUpdate"></td>
+            </tr>
+            <tr>
+                <td><label for="chapInput">Chapter/Episode:</label></td>
+                <td><input class="listInput"  type="number" id="chapUpdate"  min="1"></td>
+            </tr>
+            <tr>
+                <td><label for="readStat">Read/Watched:</label></td>
+                <td><select  class="listInput"  id="readUpdate" style="height: max-content;" required>
+                    <option value="yes">YES</option>
+                    <option value="no">NO</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td><label for="myRate">My Rating:</label></td>
+                <td style="font-size: large;">
+                    <input required class="listInput"  type="number" id="myRateUpdate" max="10" min="0" style="width: max-content;"> / 10
+                </td>
+            </tr>
+            <tr>
+                <td><label for="comment">Comment:</label></td>
+                <td><input type="text" class="listInput"  id="commentUpdate" required></td>
+            </tr>
+        </table>
+        <center>
+            <button id="addMyList" style="margin-top: 20px;" onclick="saveUpdate()">Save Update</button>
+        </center>
+    </div>
+
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>

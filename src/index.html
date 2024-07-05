@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- navigation & header -->
+    <nav>
+        <!-- website name -->
+        <div class="nav-header">
+            <span class="nav-icon" onclick="openNav()">&#9776;</span>
+            <a href="index.html" style="text-decoration: none; color:#ffffff;">
+                <div class="web-name-container">
+                    <h1 class="web-name" id="web-name-left">Anime<br>Manga</h1>
+                    <span class="web-name" id="web-name-right">Town</span>
+                </div>
+            </a>
+
+
+            <!-- search bar -->
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Anime / Manga">
+                <select id="searchType">
+                    <option value="anime">Anime</option>
+                    <option value="manga">Manga</option>
+                </select>
+                <button id="search-btn" type="submit" onclick="buttonClicked1()">Search</button>
+            </div>
+
+        </div>
+
+        <!-- Add the navigation bar -->
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="index.html">Home</a>
+            <a href="myList.html">My List</a>
+        </div>
+    </nav>
+
+    <!-- content -->
+    <div style="margin-top: 5%;">
+        <h1 style="text-align: center; color: #E882B2;">
+            Top 5 Anime
+        </h1>
+        <div id="myList" class="flex-container"></div><br>
+
+        <h1 style="text-align: center; color: #E882B2;">
+            Top 5 Manga
+        </h1>
+        <div id="myList2" class="flex-container"></div><br>
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
